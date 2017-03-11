@@ -5,7 +5,6 @@
 //  Created by Pooja Tyagi on 05/03/17.
 //  Copyright © 2017 Pooja Tyagi. All rights reserved.
 //
-
 import UIKit
 
 @UIApplicationMain
@@ -15,8 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert,.sound] ,categories: nil))
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        let state : UIApplicationState = application.applicationState
+        if state == UIApplicationState.active{
+            let alert = UIAlertView(title: "Reminder", message: notification.alertBody, delegate: self, cancelButtonTitle: "OK" )
+          //  alert.backgroundColor = UIColor.darkGray
+            alert.show()
+            }
+        let notificationName = Foundation.Notification.Name("reloadData")
+        NotificationCenter.default.post(name: notificationName, object: self)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
