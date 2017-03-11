@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EvD-FV-0UG" id="aST-cq-sze">
-                                    <frame key="frameInset" width="342" height="87"/>
+                                    <frame key="frameInset" width="342" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5B-Fk-2XN">
@@ -114,33 +114,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Task Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8G6-m6-Unc">
-                                <frame key="frameInset" minX="104" minY="92" width="140" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="V3Z-Xm-WxD" id="1kZ-LK-TwN"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter time to be reminded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbL-Cc-hT6">
-                                <frame key="frameInset" minX="104" minY="276" width="192" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter time to be reminded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbL-Cc-hT6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="f2N-R5-4h7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lN7-bn-pSk">
-                                <frame key="frameInset" minX="54" minY="299" height="127" maxX="55"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lN7-bn-pSk">
                                 <date key="date" timeIntervalSinceReferenceDate="510840107.69182301">
                                     <!--2017-03-10 12:01:47 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Task Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBG-RQ-1JA">
-                                <frame key="frameInset" minX="16" minY="175" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Task Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBG-RQ-1JA">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -148,8 +135,31 @@
                                     <outlet property="delegate" destination="V3Z-Xm-WxD" id="lqv-7I-ZaO"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Task Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8G6-m6-Unc">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="V3Z-Xm-WxD" id="1kZ-LK-TwN"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="iBG-RQ-1JA" secondAttribute="leading" id="3Dt-xX-SKf"/>
+                            <constraint firstItem="8G6-m6-Unc" firstAttribute="top" secondItem="5AC-GH-LC0" secondAttribute="bottom" constant="28" id="3YE-Vt-toC"/>
+                            <constraint firstItem="x8o-JP-ged" firstAttribute="top" secondItem="lN7-bn-pSk" secondAttribute="bottom" constant="241" id="C6n-AB-XQo"/>
+                            <constraint firstItem="qbL-Cc-hT6" firstAttribute="leading" secondItem="PG9-5v-RJk" secondAttribute="leadingMargin" constant="88" id="NAF-rs-sFL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iBG-RQ-1JA" secondAttribute="trailing" id="SR2-tU-38G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qbL-Cc-hT6" secondAttribute="trailing" constant="63" id="TGR-c2-qlb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8G6-m6-Unc" secondAttribute="trailing" constant="102" id="UY6-hr-KR8"/>
+                            <constraint firstItem="lN7-bn-pSk" firstAttribute="leading" secondItem="PG9-5v-RJk" secondAttribute="leadingMargin" constant="38" id="WvR-Ff-L8E"/>
+                            <constraint firstItem="8G6-m6-Unc" firstAttribute="leading" secondItem="PG9-5v-RJk" secondAttribute="leadingMargin" constant="101" id="ZjL-C6-rrx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lN7-bn-pSk" secondAttribute="trailing" constant="39" id="byW-QU-lJe"/>
+                            <constraint firstItem="iBG-RQ-1JA" firstAttribute="top" secondItem="5AC-GH-LC0" secondAttribute="bottom" constant="111" id="gEI-ZZ-7Wt"/>
+                            <constraint firstItem="lN7-bn-pSk" firstAttribute="top" secondItem="qbL-Cc-hT6" secondAttribute="bottom" constant="2" id="rxY-Pz-eke"/>
+                            <constraint firstItem="qbL-Cc-hT6" firstAttribute="top" secondItem="PG9-5v-RJk" secondAttribute="top" constant="276" id="wbZ-aS-j3M"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Task" id="w0G-10-esg">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5Zg-Dx-gY4">
